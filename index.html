@@ -31,103 +31,20 @@
     }
 
     /* ========== HEADER ========== */
-.header {
-  background: 
-    linear-gradient(
-      rgba(30, 40, 22, 0.65),
-      rgba(30, 40, 22, 0.75)
-    ),
-  url('images/top-banner.jpg') center/cover no-repeat;
-  color: white;
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  min-height: 180px; /* Optional – makes the banner taller */
-}
-
-    .header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.4;
+    .header {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      line-height: 0;
+      background: #3a4a2e;
     }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      z-index: 1;
-    }
-
-    .shield {
-      width: 80px;
-      height: 90px;
-      background: linear-gradient(160deg, #5a6b45, #3a4a2e);
-      border: 3px solid var(--gold);
-      border-radius: 8px 8px 40% 40%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      position: relative;
-    }
-
-    .shield::after {
-      content: 'V';
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--gold-light);
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-    }
-
-    .brand h1 {
-      font-size: 2.6rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-      line-height: 1;
-    }
-
-    .brand .tagline {
-      font-size: 0.95rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #e0d5b0;
-      margin-top: 0.35rem;
-      font-weight: 500;
-    }
-
-    .veteran-badge {
-      background: #8b1a1a;
-      border: 3px solid var(--gold);
-      border-radius: 50%;
-      width: 90px;
-      height: 90px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
-      z-index: 1;
-    }
-
-    .veteran-badge .star {
-      font-size: 1.4rem;
-      color: var(--gold);
-      line-height: 1;
+    .banner-image {
+      width: 100%;
+      max-width: 1100px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     /* ========== MAIN LAYOUT ========== */
@@ -141,21 +58,21 @@
       min-height: 70vh;
     }
 
-/* Left sidebar */
-.sidebar {
-  background: 
-    linear-gradient(
-      180deg,
-      rgba(45, 58, 35, 0.82) 0%,
-      rgba(35, 46, 28, 0.90) 100%
-    ),
-    url('images/metal-plate-background.jpg') center/cover no-repeat;
-  color: #f0eade;
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-}
+    /* Left sidebar */
+    .sidebar {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(45, 58, 35, 0.82) 0%,
+          rgba(35, 46, 28, 0.90) 100%
+        ),
+        url('images/metal-plate-background.jpg') center/cover no-repeat;
+      color: #f0eade;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
 
     .sidebar h2 {
       font-size: 1.15rem;
@@ -333,19 +250,6 @@
         grid-template-columns: 1fr;
       }
 
-      .header {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .logo-area {
-        flex-direction: column;
-      }
-
-      .brand h1 {
-        font-size: 2rem;
-      }
-
       .content {
         padding: 1.75rem 1.5rem;
       }
@@ -354,42 +258,18 @@
         order: 2;
       }
     }
-
-    @media (max-width: 480px) {
-      .brand h1 {
-        font-size: 1.6rem;
-      }
-
-      .shield {
-        width: 60px;
-        height: 70px;
-      }
-
-      .shield::after {
-        font-size: 2rem;
-      }
-    }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="header">
-    <div class="logo-area">
-      <div class="shield" aria-hidden="true"></div>
-      <div class="brand">
-        <h1>VALOR</h1>
-        <div class="tagline">It's Our Common Virtue</div>
-      </div>
-    </div>
-    <div class="veteran-badge">
-      <span class="star">★</span>
-      VETERAN<br>OWNED
-    </div>
+    <img src="images/top-banner.jpg" alt="VALOR - It's Our Common Virtue" class="banner-image">
   </header>
 
   <!-- MAIN -->
   <div class="main">
+
     <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
       <div>
@@ -427,9 +307,9 @@
       <section class="section">
         <h2>Capabilities</h2>
         <p>
-          RZL Logistics offers <strong>transportation sourcing &amp; management</strong>. 
-          We streamline the flow of goods by selecting timely and cost-efficient modes of transportation. 
-          We utilize reputable carriers who will perform freight services according to company and government regulations. 
+          RZL Logistics offers <strong>transportation sourcing &amp; management</strong>.
+          We streamline the flow of goods by selecting timely and cost-efficient modes of transportation.
+          We utilize reputable carriers who will perform freight services according to company and government regulations.
           We provide food logistic services relating to planning, sourcing, and executing the movement of all freight.
         </p>
       </section>
@@ -438,8 +318,8 @@
         <h2>Differentiators</h2>
         <p>
           <strong>RZL Logistics is veteran &amp; family owned.</strong><br><br>
-          Our company was built from abiding by an uncompromising code of integrity. 
-          Commitment holds our core values together and ensures that every action is treated with the utmost importance from start to finish. 
+          Our company was built from abiding by an uncompromising code of integrity.
+          Commitment holds our core values together and ensures that every action is treated with the utmost importance from start to finish.
           We invest our time to our customers, and guarantee our one-on-one communication to guarantee successful and on-time deliveries of your freight.
         </p>
       </section>
@@ -450,14 +330,10 @@
           <div class="contact-info">
             <h3>RZL Logistics LLC</h3>
             <p>622 Broadway</p>
-            <!-- Update the lines below with the correct city/zip/phone/email when you have them -->
             <p>Plainview, TX 79072</p>
             <p style="margin-top:0.6rem;">
               <a href="mailto:robertlanderos@valor-logistics.com">robertlanderos@valor-logistics.com</a>
             </p>
-            <!-- Add phone number here when available, e.g.:
-            <p><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></p>
-            -->
           </div>
           <div class="badge-row">
             <span class="badge">Veteran Owned</span>
@@ -467,6 +343,7 @@
         </div>
       </section>
     </main>
+
   </div>
 
   <footer>
