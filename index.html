@@ -31,18 +31,24 @@
     }
 
     /* ========== HEADER ========== */
-    .header {
-      background: linear-gradient(135deg, #3d4a2e 0%, #5a6b45 50%, #4a5c3a 100%);
-      color: white;
-      padding: 1.5rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
+.header {
+  background: 
+    linear-gradient(
+      rgba(30, 40, 22, 0.65),
+      rgba(30, 40, 22, 0.75)
+    ),
+  url('images/top-banner.jpg') center/cover no-repeat;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px; /* Optional – makes the banner taller */
+}
 
     .header::before {
       content: '';
