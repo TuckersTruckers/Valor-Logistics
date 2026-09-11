@@ -155,12 +155,12 @@ a:hover {
 
 /* ========== HERO SECTION ========== */
 .hero {
-  background: linear-gradient(135deg, rgba(58, 74, 46, 0.6) 0%, rgba(74, 92, 58, 0.6) 100%), 
-              url('images/top-banner.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(58, 74, 46, 0.5) 0%, rgba(74, 92, 58, 0.5) 100%), 
+              url('images/top-banner.jpg') center/cover no-repeat fixed;
   color: white;
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   position: relative;
-  min-height: 650px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,19 +174,21 @@ a:hover {
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   line-height: 1.1;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content p {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 300;
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  opacity: 0.98;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -263,24 +265,28 @@ section {
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
   color: var(--olive-dark);
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
   width: 100%;
+  font-family: 'Arial Black', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  font-style: italic;
+  text-shadow: 2px 2px 0px rgba(201, 168, 76, 0.3);
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -12px;
+  bottom: -16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
+  width: 80px;
+  height: 4px;
   background: var(--gold);
   border-radius: 2px;
 }
@@ -300,9 +306,9 @@ section {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
 }
 
 .service-card {
@@ -353,9 +359,12 @@ section {
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .value-card {
@@ -393,9 +402,9 @@ section {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
 }
 
 .team-member {
@@ -472,11 +481,14 @@ section {
   border: 1px solid rgba(201, 168, 76, 0.3);
   border-radius: 8px;
   padding: 3.5rem;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .testimonial-slide {
@@ -566,8 +578,11 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   align-items: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-info-box {
@@ -713,6 +728,20 @@ section {
 }
 
 /* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .mobile-toggle {
     display: flex;
@@ -749,6 +778,13 @@ section {
     border-bottom: none;
     border-left: 4px solid var(--gold);
     padding-left: calc(2rem - 4px);
+  }
+
+  .nav-menu .cta-btn {
+    margin: 1rem 2rem 0;
+    display: block;
+    text-align: center;
+    width: calc(100% - 4rem);
   }
 
   .hero {
@@ -791,8 +827,12 @@ section {
   }
 
   .service-grid,
-  .values-grid,
   .team-grid {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
     gap: 1.5rem;
   }
 
