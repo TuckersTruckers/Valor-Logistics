@@ -3,358 +3,286 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RZL Logistics LLC | VALOR – Veteran & Family Owned Freight Brokerage</title>
-  <meta name="description" content="RZL Logistics LLC (DBA VALOR) – Veteran & family owned freight brokerage offering transportation sourcing & management across the USA." />
-  <style>
-    :root {
-      --olive: #4a5c3a;
-      --olive-dark: #3a4a2e;
-      --olive-light: #6b7c55;
-      --gold: #c9a84c;
-      --gold-light: #e8d48b;
-      --cream: #f5f0e6;
-      --dark: #1a1a1a;
-      --text: #2c2c2c;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #e8e4d9;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    /* ========== HEADER ========== */
-    .header {
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      line-height: 0;
-      background: #3a4a2e;
-    }
-
-    .banner-image {
-      width: 100%;
-      max-width: 1100px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* ========== MAIN LAYOUT ========== */
-    .main {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      max-width: 1100px;
-      margin: 0 auto;
-      background: white;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-      min-height: 70vh;
-    }
-
-    /* Left sidebar */
-    .sidebar {
-      background:
-        linear-gradient(
-          180deg,
-          rgba(45, 58, 35, 0.82) 0%,
-          rgba(35, 46, 28, 0.90) 100%
-        ),
-        url('images/metal-plate-background.jpg') center/cover no-repeat;
-      color: #f0eade;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-    }
-
-    .sidebar h2 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--gold-light);
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 0.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .company-intro {
-      font-size: 0.95rem;
-      line-height: 1.45;
-    }
-
-    .company-intro strong {
-      display: block;
-      font-size: 1.15rem;
-      color: white;
-      margin-bottom: 0.3rem;
-    }
-
-    .ids {
-      font-size: 0.88rem;
-      line-height: 1.7;
-    }
-
-    .ids span {
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-
-    .naics h3 {
-      font-size: 0.95rem;
-      color: var(--gold-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .naics ul {
-      list-style: none;
-      font-size: 0.82rem;
-      line-height: 1.55;
-    }
-
-    .naics li {
-      margin-bottom: 0.55rem;
-      padding-left: 0.6rem;
-      border-left: 3px solid var(--gold);
-    }
-
-    .texas-seal {
-      margin-top: auto;
-      text-align: center;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(201, 168, 76, 0.4);
-    }
-
-    .texas-seal .seal {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 0.5rem;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      background: radial-gradient(circle, #f5f0e6 0%, #d4c9a8 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.55rem;
-      font-weight: 700;
-      color: #3a4a2e;
-      text-align: center;
-      line-height: 1.2;
-      letter-spacing: 0.02em;
-    }
-
-    /* Right content */
-    .content {
-      padding: 2.25rem 2.5rem;
-      background: #faf8f3;
-    }
-
-    .section {
-      margin-bottom: 2.25rem;
-    }
-
-    .section h2 {
-      font-size: 1.45rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--olive-dark);
-      border-bottom: 3px solid var(--olive);
-      padding-bottom: 0.4rem;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
-
-    .section p {
-      font-size: 1.02rem;
-      line-height: 1.65;
-      color: #333;
-    }
-
-    .section p strong {
-      color: var(--olive);
-    }
-
-    .contact-box {
-      background: white;
-      border: 2px solid var(--olive);
-      border-radius: 8px;
-      padding: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-
-    .contact-info h3 {
-      font-size: 1.2rem;
-      color: var(--olive-dark);
-      margin-bottom: 0.6rem;
-    }
-
-    .contact-info p {
-      font-size: 0.98rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-info a {
-      color: var(--olive);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    .badge-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      background: var(--olive);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: var(--olive-dark);
-      color: #c9b896;
-      text-align: center;
-      padding: 1.25rem;
-      font-size: 0.85rem;
-    }
-
-    footer a {
-      color: var(--gold-light);
-      text-decoration: none;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 800px) {
-      .main {
-        grid-template-columns: 1fr;
-      }
-
-      .content {
-        padding: 1.75rem 1.5rem;
-      }
-
-      .sidebar {
-        order: 2;
-      }
-    }
-  </style>
+  <meta name="description" content="Valor Logistics - Professional freight transportation services. FTL dry van, reefer, and flatbed shipping across the USA. Veteran & family owned." />
+  <meta property="og:title" content="Valor Logistics | Freight Transportation & Logistics" />
+  <meta property="og:description" content="Professional freight transportation services. FTL dry van, reefer, and flatbed shipping across the USA." />
+  <meta property="og:type" content="business.business" />
+  <title>Valor Logistics | Freight Transportation Services</title>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER / NAVIGATION -->
   <header class="header">
-    <img src="images/top-banner.jpg" alt="VALOR - It's Our Common Virtue" class="banner-image">
-  </header>
-
-  <!-- MAIN -->
-  <div class="main">
-
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
-      <div>
-        <h2>RZL LOGISTICS LLC</h2>
-        <p class="company-intro">
-          is a veteran owned business offering services across the USA
-        </p>
-      </div>
-
-      <div class="ids">
-        <div><span>DUNS:</span> 007366132</div>
-        <div><span>CAGE:</span> 8TX99</div>
-      </div>
-
-      <div class="naics">
-        <h3>NAICS Codes</h3>
-        <ul>
-          <li><strong>488510</strong><br>Freight Transportation Arrangement</li>
-          <li><strong>484110</strong><br>General Freight Trucking</li>
-          <li><strong>484121</strong><br>General Freight Trucking, Long Distance Truckload</li>
-          <li><strong>484122</strong><br>General Freight Trucking, Long Distance, LTL</li>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">Valor</span>
+            <span class="logo-sub">Logistics</span>
+          </a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="shippers.html">For Shippers</a></li>
+          <li><a href="carriers.html">For Carriers</a></li>
+          <li><a href="quote.html" class="cta-btn">Request Quote</a></li>
         </ul>
       </div>
+    </nav>
+  </header>
 
-      <div class="texas-seal">
-        <div class="seal">
-          THE STATE<br>OF<br>TEXAS
-        </div>
-        <div style="font-size:0.75rem; opacity:0.85;">Proudly Texas Based</div>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Professional Freight Transportation</h1>
+      <p>Reliable, timely logistics solutions across the USA. Veteran & family owned.</p>
+      <div class="hero-buttons">
+        <a href="quote.html" class="btn btn-primary">Request a Quote</a>
+        <a href="#contact" class="btn btn-secondary">Contact Our Team</a>
       </div>
-    </aside>
+    </div>
+    <div class="hero-image">
+      <img src="images/top-banner.jpg" alt="Valor Logistics" />
+    </div>
+  </section>
 
-    <!-- RIGHT CONTENT -->
-    <main class="content">
-      <section class="section">
-        <h2>Capabilities</h2>
-        <p>
-          RZL Logistics offers <strong>transportation sourcing &amp; management</strong>.
-          We streamline the flow of goods by selecting timely and cost-efficient modes of transportation.
-          We utilize reputable carriers who will perform freight services according to company and government regulations.
-          We provide food logistic services relating to planning, sourcing, and executing the movement of all freight.
-        </p>
-      </section>
+  <!-- SERVICES OVERVIEW -->
+  <section class="services-preview">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Professional transportation solutions for every freight need</p>
+      
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">📦</div>
+          <h3>FTL Dry Van</h3>
+          <p>Professional full truckload dry van transportation across the United States.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">❄️</div>
+          <h3>Reefer</h3>
+          <p>Refrigerated freight transportation for temperature-sensitive commodities.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">📐</div>
+          <h3>Flatbed</h3>
+          <p>Flatbed transportation for specialized and oversized cargo.</p>
+        </div>
+      </div>
+      
+      <div class="services-cta">
+        <a href="services.html" class="btn btn-outline">Explore All Services</a>
+      </div>
+    </div>
+  </section>
 
-      <section class="section">
-        <h2>Differentiators</h2>
-        <p>
-          <strong>RZL Logistics is veteran &amp; family owned.</strong><br><br>
-          Our company was built from abiding by an uncompromising code of integrity.
-          Commitment holds our core values together and ensures that every action is treated with the utmost importance from start to finish.
-          We invest our time to our customers, and guarantee our one-on-one communication to guarantee successful and on-time deliveries of your freight.
-        </p>
-      </section>
+  <!-- WHY CHOOSE VALOR -->
+  <section class="why-valor">
+    <div class="container">
+      <h2 class="section-title">Why Choose Valor Logistics</h2>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Dependable Service</h3>
+          <p>We prioritize on-time delivery and transparent communication with every shipment.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Veteran & Family Owned</h3>
+          <p>Built on a foundation of integrity, commitment, and accountability to every customer.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Professional Team</h3>
+          <p>Experienced logistics professionals dedicated to your success, available 24/7.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Streamlined Solutions</h3>
+          <p>We handle transportation sourcing and management so you can focus on your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section class="section">
-        <h2>Contact Info</h2>
-        <div class="contact-box">
-          <div class="contact-info">
-            <h3>RZL Logistics LLC</h3>
-            <p>622 Broadway</p>
-            <p>Plainview, TX 79072</p>
-            <p style="margin-top:0.6rem;">
+  <!-- TEAM PREVIEW -->
+  <section class="team-preview">
+    <div class="container">
+      <h2 class="section-title">Our Leadership</h2>
+      <p class="section-subtitle">Meet the team dedicated to your logistics success</p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-info">
+            <h3>Robert Landeros</h3>
+            <p class="title">CEO / Owner</p>
+            <p class="contact">
+              <a href="tel:903-449-3496">903-449-3496</a><br>
               <a href="mailto:robertlanderos@valor-logistics.com">robertlanderos@valor-logistics.com</a>
             </p>
           </div>
-          <div class="badge-row">
-            <span class="badge">Veteran Owned</span>
-            <span class="badge">Family Owned</span>
-            <span class="badge">MC 1096119</span>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-info">
+            <h3>Sabrie Villegas</h3>
+            <p class="title">COO</p>
+            <p class="contact">
+              <a href="tel:806-500-6000">806-500-6000</a><br>
+              <a href="mailto:sabrievillegas@valor-logistics.com">sabrievillegas@valor-logistics.com</a>
+            </p>
           </div>
         </div>
-      </section>
-    </main>
+        
+        <div class="team-member">
+          <div class="member-info">
+            <h3>Jade Landeros</h3>
+            <p class="title">Truckload Planner</p>
+            <p class="contact">
+              <a href="tel:940-230-1191">940-230-1191</a><br>
+              <a href="mailto:jadelanderos@valor-logistics.com">jadelanderos@valor-logistics.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="team-more">
+        <a href="about.html" class="btn btn-outline">View Full Team</a>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      
+      <div class="testimonial-carousel">
+        <div class="testimonial-slide active">
+          <blockquote>
+            <p>"Valor Logistics has been a reliable partner for our freight needs. Their team is responsive, professional, and committed to getting our shipments where they need to go on time."</p>
+            <footer>
+              <strong>ABC Supply Company</strong>
+              <span>Freight Shipper</span>
+            </footer>
+          </blockquote>
+        </div>
+        
+        <div class="testimonial-slide">
+          <blockquote>
+            <p>"Working with Valor Logistics means working with people who care about your business. Their communication is clear, their service is dependable, and they treat us like partners."</p>
+            <footer>
+              <strong>Texas Manufacturing Co.</strong>
+              <span>Freight Shipper</span>
+            </footer>
+          </blockquote>
+        </div>
+        
+        <div class="testimonial-slide">
+          <blockquote>
+            <p>"Valor stands out in the logistics industry. They're straightforward, professional, and genuinely invested in solving problems. Highly recommended."</p>
+            <footer>
+              <strong>Regional Distributor</strong>
+              <span>Freight Shipper</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+      
+      <div class="testimonial-nav">
+        <button class="dot active" onclick="currentTestimonial(1)"></button>
+        <button class="dot" onclick="currentTestimonial(2)"></button>
+        <button class="dot" onclick="currentTestimonial(3)"></button>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    © <span id="year"></span> RZL Logistics LLC (DBA VALOR). All rights reserved.
-    &nbsp;|&nbsp; Veteran &amp; Family Owned Freight Brokerage
+  <!-- CONTACT / CTA -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Ready to Ship?</h2>
+      <p class="section-subtitle">Get a fast, professional quote from our team</p>
+      
+      <div class="contact-grid">
+        <div class="contact-info-box">
+          <h3>Contact Valor Logistics</h3>
+          <div class="contact-details">
+            <p><strong>Plainview, TX 79072</strong></p>
+            <p>
+              <a href="tel:903-449-3496" class="contact-link">📞 903-449-3496</a>
+            </p>
+            <p>
+              <a href="mailto:operations@valor-logistics.com" class="contact-link">✉️ operations@valor-logistics.com</a>
+            </p>
+            <p class="availability">Available 24/7</p>
+          </div>
+        </div>
+        
+        <div class="contact-cta">
+          <p>Submit your shipment details and our team will follow up with a competitive quote.</p>
+          <a href="quote.html" class="btn btn-primary btn-large">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Valor Logistics</h4>
+          <p>Professional freight transportation services across the USA.</p>
+          <p class="footer-badge">Veteran & Family Owned</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="shippers.html">For Shippers</a></li>
+            <li><a href="carriers.html">For Carriers</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>
+            Plainview, TX 79072<br>
+            <a href="tel:903-449-3496">903-449-3496</a><br>
+            <a href="mailto:operations@valor-logistics.com">operations@valor-logistics.com</a>
+          </p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#dry-van">FTL Dry Van</a></li>
+            <li><a href="services.html#reefer">Reefer</a></li>
+            <li><a href="services.html#flatbed">Flatbed</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Valor Logistics. All rights reserved.</p>
+        <p>Veteran & Family Owned Freight Brokerage</p>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
-
- 
