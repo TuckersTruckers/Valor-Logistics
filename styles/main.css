@@ -291,6 +291,14 @@ section {
   border-radius: 2px;
 }
 
+.section-title-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--text-light);
@@ -740,6 +748,10 @@ section {
   .values-grid {
     grid-template-columns: 1fr;
   }
+
+  .section-title-image {
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -817,6 +829,10 @@ section {
     font-size: 1.8rem;
   }
 
+  .section-title-image {
+    max-width: 250px;
+  }
+
   .section-subtitle {
     font-size: 1rem;
   }
@@ -861,6 +877,10 @@ section {
 
   .section-title::after {
     width: 40px;
+  }
+
+  .section-title-image {
+    max-width: 200px;
   }
 
   .btn {
