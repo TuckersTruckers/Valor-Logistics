@@ -156,7 +156,7 @@ a:hover {
 /* ========== HERO SECTION ========== */
 .hero {
   background: linear-gradient(135deg, rgba(58, 74, 46, 0.5) 0%, rgba(74, 92, 58, 0.5) 100%), 
-              url('images/top-banner.jpg') center/cover no-repeat fixed;
+              url('../images/metal-plate-background.jpg') center/cover no-repeat fixed;
   color: white;
   padding: 8rem 2rem;
   position: relative;
