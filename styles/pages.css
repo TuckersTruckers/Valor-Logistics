@@ -1,0 +1,46 @@
+/* Shared styles for the secondary Valor Logistics pages. */
+.page-hero {
+  background: linear-gradient(135deg, rgba(58, 74, 46, .86), rgba(26, 26, 26, .78)), url('../images/metal-plate-background.jpg') center/cover no-repeat;
+  color: var(--white);
+  padding: 7rem 0;
+}
+.page-hero h1 { max-width: 850px; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; margin: .5rem 0 1.25rem; }
+.page-hero p:not(.eyebrow) { max-width: 700px; font-size: 1.2rem; opacity: .92; }
+.eyebrow { color: var(--gold-light); font-size: .8rem; font-weight: 700; letter-spacing: .16em; }
+.content-section { padding: 5rem 0; }
+.narrow-content { max-width: 950px; }
+.narrow-content > p { max-width: 850px; margin: 0 auto 1.25rem; font-size: 1.08rem; }
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.four-columns { grid-template-columns: repeat(4, 1fr); }
+.info-card { background: var(--light-bg); border: 1px solid var(--border); border-top: 4px solid var(--gold); border-radius: 6px; padding: 1.8rem; }
+.info-card h3 { color: var(--olive-dark); margin: .75rem 0; }
+.card-icon, .service-number { color: var(--gold); font-weight: 700; letter-spacing: .08em; }
+.band-section { background: var(--olive-dark); color: var(--white); padding: 4rem 0; }
+.band-section h2 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.split-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.split-content p { margin-bottom: 1.25rem; }
+.service-list { max-width: 950px; margin: auto; }
+.service-detail { display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+.service-detail h2 { color: var(--olive-dark); margin-bottom: .6rem; }
+.carrier-intro { align-items: start; }
+.carrier-intro > div:first-child { padding-top: 1rem; }
+.carrier-intro h2, .form-card h2, .quote-guidance h2 { color: var(--olive-dark); margin-bottom: 1rem; }
+.check-list { list-style: none; margin: 1.5rem 0; }
+.check-list li { position: relative; padding: .55rem 0 .55rem 1.7rem; }
+.check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+.form-card { background: var(--light-bg); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; box-shadow: 0 8px 25px rgba(26,26,26,.06); }
+.form-card form { display: grid; gap: .7rem; }
+.form-card label { color: var(--olive-dark); font-weight: 600; font-size: .9rem; }
+.form-card label span { color: #a23b31; }
+.form-card input, .form-card select, .form-card textarea { width: 100%; border: 1px solid var(--border); border-radius: 4px; padding: .75rem; font: inherit; background: var(--white); color: var(--text); }
+.form-card textarea { resize: vertical; }
+.form-card .btn { margin-top: .7rem; width: 100%; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-row > div { display: grid; gap: .7rem; }
+.quote-layout { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(400px, 1.2fr); gap: 4rem; align-items: start; }
+.quote-guidance { padding-top: 1rem; }
+.muted-note { color: var(--text-light); font-size: .95rem; }
+.contact-callout { border-left: 4px solid var(--gold); padding: 1rem 1.25rem; background: var(--light-bg); margin-top: 2rem; }
+@media (max-width: 900px) { .four-columns { grid-template-columns: repeat(2, 1fr); } .quote-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
+@media (max-width: 768px) { .page-hero { padding: 5rem 0; } .info-grid, .split-content { grid-template-columns: 1fr; gap: 1.5rem; } .service-detail { grid-template-columns: 50px 1fr; } .form-row { grid-template-columns: 1fr; gap: .7rem; } }
+@media (max-width: 480px) { .four-columns { grid-template-columns: 1fr; } .form-card { padding: 1.25rem; } }
