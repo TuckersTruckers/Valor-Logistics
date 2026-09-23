@@ -169,51 +169,200 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">What Our Customers Say</h2>
-      </div>
-      
-      <div class="testimonial-carousel">
-        <div class="testimonial-slide active">
-          <blockquote>
-            <p>"Valor Logistics has been a reliable partner for our freight needs. Their team is responsive, professional, and committed to getting our shipments where they need to go on time."</p>
-            <footer>
-              <strong>ABC Supply Company</strong>
-              <span>Freight Shipper</span>
-            </footer>
-          </blockquote>
-        </div>
-        
-        <div class="testimonial-slide">
-          <blockquote>
-            <p>"Working with Valor Logistics means working with people who care about your business. Their communication is clear, their service is dependable, and they treat us like partners."</p>
-            <footer>
-              <strong>Texas Manufacturing Co.</strong>
-              <span>Freight Shipper</span>
-            </footer>
-          </blockquote>
-        </div>
-        
-        <div class="testimonial-slide">
-          <blockquote>
-            <p>"Valor stands out in the logistics industry. They're straightforward, professional, and genuinely invested in solving problems. Highly recommended."</p>
-            <footer>
-              <strong>Regional Distributor</strong>
-              <span>Freight Shipper</span>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-      
-      <div class="testimonial-nav">
-        <button class="dot active" onclick="currentTestimonial(1)"></button>
-        <button class="dot" onclick="currentTestimonial(2)"></button>
-        <button class="dot" onclick="currentTestimonial(3)"></button>
-      </div>
-    </div>
-  </section>
+
+<section class="testimonials">
+  <div class="container">
+
+```
+<div class="section-header">
+  <h2 class="section-title">What Our Customers Say</h2>
+</div>
+
+<div class="testimonial-carousel">
+
+  <!-- TESTIMONIAL 1 -->
+  <div class="testimonial-slide active">
+    <blockquote>
+      <p>
+        "Valor Logistics has been a reliable partner for our freight needs.
+        Their team is responsive, professional, and committed to getting our
+        shipments where they need to go on time."
+      </p>
+      <footer>
+        <strong>ABC Supply Company</strong>
+        <span>Freight Shipper</span>
+      </footer>
+    </blockquote>
+  </div>
+
+  <!-- TESTIMONIAL 2 -->
+  <div class="testimonial-slide">
+    <blockquote>
+      <p>
+        "Working with Valor Logistics means working with people who care about
+        your business. Their communication is clear, their service is dependable,
+        and they treat us like partners."
+      </p>
+      <footer>
+        <strong>Texas Manufacturing Co.</strong>
+        <span>Freight Shipper</span>
+      </footer>
+    </blockquote>
+  </div>
+
+  <!-- TESTIMONIAL 3 -->
+  <div class="testimonial-slide">
+    <blockquote>
+      <p>
+        "Valor stands out in the logistics industry. They're straightforward,
+        professional, and genuinely invested in solving problems. Highly recommended."
+      </p>
+      <footer>
+        <strong>Regional Distributor</strong>
+        <span>Freight Shipper</span>
+      </footer>
+    </blockquote>
+  </div>
+
+  <!-- TESTIMONIAL 4 -->
+  <div class="testimonial-slide">
+    <blockquote>
+      <p>
+        "I've worked with Valor as a carrier for years. Every time we book a
+        load with Sabrie, she is extremely transparent, honest, and fair.
+        By far my favorite broker to drive for."
+      </p>
+      <footer>
+        <strong>Tucker George</strong>
+        <span>Owner, Tucker's Truckers LLC</span>
+      </footer>
+    </blockquote>
+  </div>
+
+</div>
+
+<!-- CAROUSEL NAVIGATION -->
+<div class="testimonial-nav">
+  <button class="dot active" onclick="currentTestimonial(1)" aria-label="Testimonial 1"></button>
+  <button class="dot" onclick="currentTestimonial(2)" aria-label="Testimonial 2"></button>
+  <button class="dot" onclick="currentTestimonial(3)" aria-label="Testimonial 3"></button>
+  <button class="dot" onclick="currentTestimonial(4)" aria-label="Testimonial 4"></button>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- TESTIMONIAL CAROUSEL JAVASCRIPT -->
+
+<script>
+  let testimonialIndex = 1;
+  let testimonialTimer;
+
+  function currentTestimonial(n) {
+    showTestimonial(testimonialIndex = n);
+    
+    // Reset the automatic timer whenever someone clicks a dot
+    resetTestimonialTimer();
+  }
+
+  function showTestimonial(n) {
+    const slides = document.querySelectorAll(".testimonial-slide");
+    const dots = document.querySelectorAll(".testimonial-nav .dot");
+
+    // Loop back to the beginning/end
+    if (n > slides.length) {
+      testimonialIndex = 1;
+    }
+
+    if (n < 1) {
+      testimonialIndex = slides.length;
+    }
+
+    // Hide all slides
+    slides.forEach(function(slide) {
+      slide.classList.remove("active");
+    });
+
+    // Remove active state from all dots
+    dots.forEach(function(dot) {
+      dot.classList.remove("active");
+    });
+
+    // Show current slide
+    slides[testimonialIndex - 1].classList.add("active");
+
+    // Activate current dot
+    dots[testimonialIndex - 1].classList.add("active");
+  }
+
+  function nextTestimonial() {
+    testimonialIndex++;
+
+    if (testimonialIndex > document.querySelectorAll(".testimonial-slide").length) {
+      testimonialIndex = 1;
+    }
+
+    showTestimonial(testimonialIndex);
+  }
+
+  function resetTestimonialTimer() {
+    clearInterval(testimonialTimer);
+
+    testimonialTimer = setInterval(function() {
+      nextTestimonial();
+    }, 10000); // 10 seconds
+  }
+
+  // Start automatic rotation when the page loads
+  document.addEventListener("DOMContentLoaded", function() {
+    showTestimonial(testimonialIndex);
+    resetTestimonialTimer();
+  });
+</script>
+
+<!-- TESTIMONIAL CAROUSEL STYLING -->
+
+<style>
+  .testimonial-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .testimonial-slide.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .testimonial-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .testimonial-nav .dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-nav .dot:hover {
+    transform: scale(1.2);
+  }
+
+  .testimonial-nav .dot.active {
+    transform: scale(1.2);
+  }
+</style>
+
 
   <!-- CONTACT / CTA -->
   <section class="contact-section" id="contact">
