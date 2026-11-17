@@ -259,3 +259,111 @@
   .leadership-photo-wrap { max-height: 440px; }
   .team-operations-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
 }
+
+
+/* ========== TEAM PAGE: DIAGONAL LEADERSHIP FLOW ========== */
+.team-editorial-section {
+  padding: clamp(1.4rem, 3vw, 2.4rem) 0 clamp(2.5rem, 4vw, 3.5rem);
+  overflow: hidden;
+}
+.team-editorial-section > .container { max-width: 1240px; }
+.team-editorial-section .team-group-heading { margin-bottom: 1rem; }
+.team-leadership { margin-top: 0 !important; }
+.team-leadership .team-group-heading { margin-bottom: 1.25rem; }
+
+.leadership-feature,
+.leadership-sabrie {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
+  align-items: stretch;
+  gap: clamp(1.6rem, 4vw, 4rem);
+  width: 94%;
+  max-width: 1120px;
+  min-height: 390px;
+  margin: 0 auto 1.25rem 0;
+  padding: clamp(1.35rem, 3vw, 2.4rem);
+  border: 0;
+  box-shadow: none;
+  background: linear-gradient(112deg, #303629 0%, #303629 40%, #f3f0e8 40.15%, #f3f0e8 100%);
+}
+.leadership-sabrie {
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  width: 90%;
+  margin: 0 0 0 auto;
+  background: linear-gradient(112deg, #f3f0e8 0%, #f3f0e8 55%, #303629 55.15%, #303629 100%);
+}
+.leadership-photo-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  max-height: 440px;
+  aspect-ratio: auto;
+  overflow: hidden;
+  padding: .45rem;
+  background: #e9e5db;
+  background-image: none;
+  border: 0;
+  box-shadow: 0 8px 22px rgba(0,0,0,.16);
+}
+.leadership-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.leadership-copy {
+  align-self: center;
+  max-width: 520px;
+  padding: 1rem clamp(.25rem, 1.5vw, 1.2rem);
+}
+.leadership-robert .leadership-copy { color: var(--text); }
+.leadership-robert .leadership-copy h2,
+.leadership-sabrie .leadership-copy h2 { margin-bottom: .65rem; }
+.leadership-bio {
+  max-width: 470px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.leadership-copy .team-profile-contact { gap: .45rem; }
+.leadership-copy .team-profile-contact a { overflow-wrap: anywhere; }
+
+.team-operations {
+  margin-top: clamp(2.3rem, 4vw, 3.5rem) !important;
+  padding-top: clamp(1.5rem, 3vw, 2.4rem);
+}
+@media (max-width: 760px) {
+  .leadership-feature,
+  .leadership-sabrie {
+    width: 100%;
+    min-height: 0;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 1.1rem;
+    padding: 1rem;
+  }
+  .leadership-sabrie {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  }
+  .leadership-photo-wrap { min-height: 280px; max-height: 360px; }
+  .leadership-copy { padding: .5rem; }
+  .leadership-copy h2 { font-size: clamp(1.45rem, 3vw, 2rem); }
+  .leadership-bio { font-size: .92rem; line-height: 1.55; }
+}
+@media (max-width: 560px) {
+  .leadership-feature,
+  .leadership-sabrie {
+    grid-template-columns: 1fr;
+    gap: .9rem;
+    padding: 1rem;
+    background: linear-gradient(145deg, #303629 0 33%, #f3f0e8 33.2% 100%);
+    margin-bottom: 1rem;
+  }
+  .leadership-sabrie {
+    background: linear-gradient(145deg, #f3f0e8 0 58%, #303629 58.2% 100%);
+  }
+  .leadership-sabrie .leadership-copy { order: 0; }
+  .leadership-sabrie .leadership-photo-wrap { order: 1; }
+  .leadership-photo-wrap { min-height: 0; height: auto; aspect-ratio: 4 / 5; max-height: 420px; }
+  .leadership-copy { max-width: none; padding: .3rem .1rem .6rem; }
+}
