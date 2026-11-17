@@ -78,7 +78,17 @@
 .team-operations-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .team-profile-card { border-radius:4px; box-shadow:0 8px 24px rgba(32,33,29,.055); }
 .team-profile-card:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(32,33,29,.1); }
-.team-profile-photo { height:320px; }
+.team-profile-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: var(--cream);
+  image-rendering: auto;
+  backface-visibility: hidden;
+}
 .team-profile-info { padding:1.45rem 1.3rem 1.6rem; }
 .team-profile-info h2 { font-size:1.2rem; }
 .team-profile-title { color:var(--olive-light); }
@@ -88,6 +98,6 @@
 }
 @media(max-width:600px) {
  .team-leadership-grid,.team-operations-grid { grid-template-columns:1fr; max-width:420px; margin:0 auto; }
- .team-profile-photo { height:340px; }
+ .team-profile-photo { height: auto; }
  .team-group-heading h2 { font-size:1.2rem; }
 }
