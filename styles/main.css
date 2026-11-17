@@ -367,14 +367,7 @@ section {
 
 /* ========== WHY VALOR ========== */
 .why-valor {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(58, 74, 46, 0.35) 0%,
-      rgba(74, 92, 58, 0.4) 100%
-    ),
-    url('../images/Logo_Map.svg') center center / cover no-repeat fixed;
-
+  background: linear-gradient(135deg, #f5f0e6 0%, #fbfaf7 100%);
   border-top: 1px solid var(--border);
   position: relative;
   overflow: hidden;
@@ -1043,4 +1036,109 @@ section {
 @media (max-width: 600px) {
   .team-page-grid { grid-template-columns: 1fr; }
   .team-profile-photo { height: 320px; }
+}
+
+
+/* ========== VALOR VISUAL REFINEMENT ========== */
+:root {
+  --olive: #4b5638;
+  --olive-dark: #25291f;
+  --olive-light: #68734f;
+  --gold: #b69a55;
+  --gold-light: #d8c58a;
+  --cream: #f4f0e7;
+  --dark: #20211d;
+  --text: #30312d;
+  --text-light: #686a63;
+  --border: #e3dfd4;
+  --light-bg: #f8f6f0;
+}
+body { color: var(--text); letter-spacing: .005em; }
+.container { max-width: 1240px; }
+.header {
+  background: rgba(250, 249, 245, .97);
+  border-bottom-color: rgba(75, 86, 56, .16);
+  box-shadow: 0 5px 22px rgba(32, 33, 29, .055);
+}
+.nav-container { min-height: 82px; }
+.logo a { letter-spacing: .075em; }
+.nav-menu a { font-size: .86rem; font-weight: 600; }
+.nav-menu .cta-btn {
+  background: var(--olive-dark);
+  border: 1px solid rgba(182, 154, 85, .55);
+  border-radius: 3px;
+}
+.nav-menu .cta-btn:hover { background: var(--olive); }
+.hero {
+  background:
+    linear-gradient(90deg, rgba(25, 29, 22, .88) 0%, rgba(37, 41, 31, .72) 56%, rgba(37, 41, 31, .42) 100%),
+    url('../images/metal-plate-background.jpg') center/cover no-repeat;
+  background-attachment: scroll;
+  min-height: 610px;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 7rem max(2rem, calc((100vw - 1200px) / 2));
+}
+.hero-content { max-width: 780px; }
+.hero-content h1 {
+  font-size: clamp(2.7rem, 5.2vw, 4.45rem);
+  line-height: 1.04;
+  letter-spacing: -.035em;
+  text-shadow: 0 3px 18px rgba(0,0,0,.28);
+}
+.hero-content p { max-width: 650px; font-size: 1.18rem; color: rgba(255,255,255,.9); }
+.btn { border-radius: 3px; }
+.btn-primary { background: var(--gold); color: #24271e; }
+.btn-primary:hover { background: var(--gold-light); }
+.btn-secondary { border-color: rgba(255,255,255,.8); }
+section { padding: clamp(3.5rem, 6vw, 5.5rem) 0; }
+.section-title {
+  font-family: inherit;
+  font-style: normal;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  letter-spacing: .045em;
+  text-shadow: none;
+  font-weight: 800;
+}
+.section-title::after { height: 3px; width: 58px; }
+.section-subtitle { color: var(--text-light); }
+.services-preview { background: #fff; }
+.service-card, .value-card, .contact-info-box, .info-card, .form-card {
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(32, 33, 29, .045);
+}
+.service-card { border-top: 3px solid var(--gold); }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(32,33,29,.09); }
+.service-icon { filter: grayscale(.35); }
+.why-valor { background: linear-gradient(135deg, #f4f0e7 0%, #fbfaf7 100%); }
+.value-card {
+  background: rgba(255,255,255,.94);
+  border: 1px solid #e6e0d2;
+  border-left: 3px solid var(--gold);
+  backdrop-filter: none;
+}
+.testimonials {
+  background: linear-gradient(125deg, #24291f 0%, #414a32 100%);
+  border-top: 1px solid rgba(182,154,85,.35);
+}
+.testimonial-carousel {
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(216,197,138,.28);
+  border-radius: 4px;
+}
+.contact-section { background: #fbfaf7; }
+.contact-info-box { background: #fff; border-left: 3px solid var(--gold); }
+.footer { background: #22261e; border-top: 2px solid var(--gold); }
+.footer-col a, .footer-col p { color: rgba(245,240,230,.76); }
+.footer-col a:hover { color: var(--gold-light); }
+.footer-badge { color: var(--gold-light); }
+@media (max-width: 768px) {
+  .hero { min-height: 490px; padding: 4.5rem 1.5rem; text-align: left; }
+  .hero-content h1 { font-size: clamp(2.25rem, 9vw, 3.2rem); }
+  .hero-buttons { justify-content: flex-start; }
+  .hero-buttons .btn { width: auto; min-width: 190px; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 3.5rem 1.25rem; }
+  .hero-buttons .btn { width: 100%; }
 }
