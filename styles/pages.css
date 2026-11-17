@@ -367,3 +367,15 @@
   .leadership-photo-wrap { min-height: 0; height: auto; aspect-ratio: 4 / 5; max-height: 420px; }
   .leadership-copy { max-width: none; padding: .3rem .1rem .6rem; }
 }
+
+/* Reverse Sabrie's desktop composition: copy left, portrait right. */
+.leadership-sabrie .leadership-copy { grid-column: 1; grid-row: 1; }
+.leadership-sabrie .leadership-photo-wrap { grid-column: 2; grid-row: 1; }
+@media (max-width: 760px) {
+  .leadership-sabrie .leadership-copy { grid-column: 1; grid-row: 1; }
+  .leadership-sabrie .leadership-photo-wrap { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 560px) {
+  .leadership-sabrie .leadership-copy { grid-column: 1; grid-row: 1; }
+  .leadership-sabrie .leadership-photo-wrap { grid-column: 1; grid-row: 2; }
+}
