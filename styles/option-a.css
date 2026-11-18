@@ -765,3 +765,17 @@ main > section { position: relative; }
   .leadership-photo-wrap { background: rgba(242,238,229,.92); }
   .team-operations-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
 }
+
+
+/* Header logo visibility refinement — keep the mark prominent without
+   crowding navigation or compromising the mobile layout. */
+.nav-container { min-height: 88px; }
+.logo a { width: 220px; height: 76px; }
+
+@media (max-width: 760px) {
+  .nav-container { min-height: 72px; }
+  .logo a { width: 184px; height: 64px; }
+}
+@media (max-width: 560px) {
+  .logo a { width: 168px; height: 58px; }
+}
