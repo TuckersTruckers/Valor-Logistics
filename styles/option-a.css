@@ -779,3 +779,80 @@ main > section { position: relative; }
 @media (max-width: 560px) {
   .logo a { width: 168px; height: 58px; }
 }
+
+
+/* MOBILE ART DIRECTION + LOGO CLARITY
+   Keep the desktop compositions unchanged; give narrow screens their own
+   image framing and avoid CSS-filtering the embedded-raster logo artwork. */
+
+/* The current SVG contains a high-resolution embedded transparent image.
+   Render it without an extra CSS filter, which can soften fine edges on
+   some mobile browser/GPU combinations. */
+.logo img {
+  filter: none !important;
+  image-rendering: auto;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Make the mobile mark large enough to read, but leave breathing room
+   for the menu control and prevent clipping at narrow device widths. */
+@media (max-width: 768px) {
+  .nav-container {
+    min-height: 76px !important;
+    gap: 12px;
+  }
+  .logo a {
+    width: clamp(172px, 48vw, 196px) !important;
+    height: 66px !important;
+    overflow: visible !important;
+    flex: 0 1 auto;
+  }
+  .logo img {
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  /* Use a deliberate mobile crop for the homepage hero. Keep the subject
+     further in frame and avoid the aggressive 60%-center crop. */
+  .page-home .hero {
+    min-height: 570px;
+    padding: 64px 22px;
+    background-position: center, 62% center !important;
+    background-size: auto, auto 100% !important;
+    background-repeat: no-repeat;
+    background-color: #171914;
+  }
+
+  /* The carrier masthead gets its own mobile framing. The background is
+     fitted to the viewport width rather than enlarged to fill the height;
+     the ink background fills any remaining vertical space. */
+  .page-carriers .page-hero {
+    min-height: 300px;
+    padding: 54px 0 58px;
+    background-position: center, center top !important;
+    background-size: auto, 100% auto !important;
+    background-repeat: no-repeat;
+    background-color: #171914;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav-container { min-height: 72px !important; }
+  .logo a {
+    width: clamp(158px, 46vw, 178px) !important;
+    height: 60px !important;
+  }
+  .page-home .hero {
+    min-height: 540px;
+    padding: 58px 20px;
+    background-position: center, 64% center !important;
+    background-size: auto, auto 100% !important;
+  }
+  .page-carriers .page-hero {
+    min-height: 270px;
+    padding: 46px 0 50px;
+    background-position: center, center top !important;
+    background-size: auto, 100% auto !important;
+  }
+}
