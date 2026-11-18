@@ -585,3 +585,183 @@ main > section { position: relative; }
     min-height: 0;
   }
 }
+
+
+/* =========================================================
+   VALOR EDITORIAL REFINEMENT — HEADER, HOME STORY & TEAM
+   ========================================================= */
+
+/* Use the transparent brand mark so it sits directly on the
+   charcoal navigation field without a white image rectangle. */
+.logo a {
+  width: 188px;
+  height: 68px;
+  overflow: visible;
+  background: transparent;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent;
+  /* Warm ivory for clear contrast on the #1b1a16 header. */
+  filter: brightness(0) invert(.94);
+}
+
+/* Center the partnership still-life within the cream story panel.
+   Keep the complete composition visible instead of cropping it. */
+.home-story-grid {
+  align-items: center;
+}
+.home-story-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  min-height: 0;
+  height: auto;
+  max-height: none;
+  padding: clamp(28px, 4vw, 48px);
+  overflow: visible;
+}
+.home-story-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: 350px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Robert and Sabrie receive the individual portrait-led treatment:
+   each panel's atmosphere is built from a softened version of its
+   own portrait, with restrained diagonal rain-like lines. */
+.leadership-feature,
+.leadership-sabrie {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(55,63,45,.18);
+  box-shadow: 0 16px 38px rgba(23,25,20,.10);
+  background: #252b21;
+}
+.leadership-feature::before,
+.leadership-sabrie::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: -18px;
+  background-size: cover;
+  background-position: center 34%;
+  filter: blur(16px) saturate(.72) brightness(.58);
+  transform: scale(1.06);
+  opacity: .78;
+}
+.leadership-robert::before {
+  background-image: url('../images/robert_landeros.jpg');
+}
+.leadership-sabrie::before {
+  background-image: url('../images/sabrie_villegas.jpg');
+}
+.leadership-feature::after,
+.leadership-sabrie::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(132deg,
+      transparent 0 27px,
+      rgba(201,168,76,.15) 27px 28px,
+      transparent 28px 56px),
+    repeating-linear-gradient(132deg,
+      transparent 0 74px,
+      rgba(255,255,255,.075) 74px 75px,
+      transparent 75px 118px),
+    linear-gradient(112deg,
+      rgba(37,43,33,.42) 0 39%,
+      rgba(242,238,229,.84) 39.2% 100%);
+}
+.leadership-sabrie::after {
+  background:
+    repeating-linear-gradient(132deg,
+      transparent 0 27px,
+      rgba(201,168,76,.15) 27px 28px,
+      transparent 28px 56px),
+    repeating-linear-gradient(132deg,
+      transparent 0 74px,
+      rgba(255,255,255,.075) 74px 75px,
+      transparent 75px 118px),
+    linear-gradient(112deg,
+      rgba(242,238,229,.84) 0 61%,
+      rgba(37,43,33,.42) 61.2% 100%);
+}
+.leadership-feature > *,
+.leadership-sabrie > * {
+  position: relative;
+  z-index: 1;
+}
+.leadership-photo-wrap {
+  background: rgba(242,238,229,.86);
+  border: 1px solid rgba(201,168,76,.58);
+  box-shadow: 0 12px 30px rgba(0,0,0,.20);
+}
+.leadership-photo {
+  object-fit: contain;
+  object-position: center;
+}
+.leadership-copy {
+  color: #303629;
+}
+.leadership-copy h2 {
+  color: #303629;
+}
+.leadership-copy .eyebrow {
+  color: #7a6330;
+}
+.leadership-copy .team-profile-contact a {
+  color: #465438;
+}
+
+/* Keep the three operations profiles together as one balanced group. */
+.team-operations {
+  margin-top: clamp(2.6rem, 5vw, 4rem) !important;
+}
+.team-operations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 26px);
+}
+.team-operations-grid .team-profile-card {
+  min-width: 0;
+  overflow: hidden;
+}
+@media (max-width: 760px) {
+  .logo a { width: 164px; height: 60px; }
+  .home-story-image { padding: 22px 0 34px; }
+  .home-story-image img { max-height: 320px; }
+  .team-operations-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .logo a { width: 150px; height: 54px; }
+  .leadership-feature,
+  .leadership-sabrie {
+    background: #252b21;
+  }
+  .leadership-feature::after,
+  .leadership-sabrie::after {
+    background:
+      repeating-linear-gradient(132deg,
+        transparent 0 23px,
+        rgba(201,168,76,.14) 23px 24px,
+        transparent 24px 48px),
+      linear-gradient(145deg,
+        rgba(242,238,229,.96) 0 72%,
+        rgba(48,54,41,.32) 72.2% 100%);
+  }
+  .leadership-photo-wrap { background: rgba(242,238,229,.92); }
+  .team-operations-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+}
