@@ -791,8 +791,6 @@ main > section { position: relative; }
 .logo img {
   filter: none !important;
   image-rendering: auto;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 /* Make the mobile mark large enough to read, but leave breathing room
@@ -819,7 +817,7 @@ main > section { position: relative; }
     min-height: 570px;
     padding: 64px 22px;
     background-position: center, 62% center !important;
-    background-size: auto, auto 100% !important;
+    background-size: auto, 100% auto !important;
     background-repeat: no-repeat;
     background-color: #171914;
   }
