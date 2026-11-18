@@ -103,3 +103,123 @@ section{padding:clamp(52px,6vw,78px) 0}
 @media(max-width:768px){.container{width:calc(100% - 36px)}.navbar{padding:0 18px}.nav-container{min-height:72px}.logo a{width:158px;height:52px}.nav-menu{top:72px;background:#20231d;border:0;box-shadow:0 14px 22px #0003}.nav-menu a{display:block;padding:13px 22px;color:#f4f0e6}.nav-menu a:hover,.nav-menu a.active{padding:13px 22px;background:#ffffff09;box-shadow:inset 3px 0 var(--va-gold)}.nav-menu .cta-btn{margin:10px 20px 16px;text-align:center}.hero{min-height:540px;padding:68px 24px;background-position:center,60% center}.hero-content h1{font-size:clamp(2.7rem,10vw,4.1rem)}.hero-buttons{flex-direction:row}.page-hero{min-height:280px;padding:52px 0}.page-hero h1{font-size:clamp(2.5rem,9vw,3.6rem)}section{padding:50px 0}.services-preview .container,.why-valor .container{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.service-card{border-right:0;border-bottom:1px solid var(--va-line);padding:20px 0}.values-grid{grid-template-columns:1fr 1fr}.value-card:nth-child(odd){border-left:0}.home-story-grid,.about-story-grid{grid-template-columns:1fr}.home-story-copy{padding:42px 24px}.home-story-image,.home-story-image img{min-height:260px}.about-story-image,.about-story-image img{min-height:280px}.about-story-copy{padding:40px 24px}.contact-grid{grid-template-columns:1fr;gap:0}.contact-info-box{border-right:0;border-bottom:1px solid var(--va-line);padding:22px 0}.contact-cta{padding:26px}.leadership-feature,.leadership-sabrie{width:100%;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:15px;padding:15px}.leadership-sabrie{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.leadership-photo-wrap{min-height:270px}.leadership-copy{padding:8px}.leadership-copy h2{font-size:clamp(1.45rem,4vw,2rem)}.team-page-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.hero{min-height:490px;padding:58px 20px}.hero-content h1{font-size:2.6rem}.hero-buttons{flex-direction:column;max-width:290px}.page-hero{min-height:260px}.page-hero h1{font-size:2.35rem}.values-grid{grid-template-columns:1fr}.value-card,.value-card:nth-child(3){border-left:0;border-top:1px solid #dcc89455;padding:16px 0}.value-card:first-child{border-top:0}.home-story-image,.home-story-image img{min-height:230px}.leadership-feature,.leadership-sabrie{grid-template-columns:1fr;background:linear-gradient(145deg,#252b21 0 20%,#f2eee5 20.2% 100%);gap:10px}.leadership-sabrie{background:linear-gradient(145deg,#f2eee5 0 72%,#252b21 72.2% 100%)}.leadership-photo-wrap{min-height:0;aspect-ratio:4/4.5;max-height:370px}.leadership-copy{padding:5px}.leadership-sabrie .leadership-copy{grid-column:1;grid-row:1}.leadership-sabrie .leadership-photo-wrap{grid-column:1;grid-row:2}.footer-grid{grid-template-columns:1fr}.btn{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* --- Alignment and image-fit corrections (review pass) --- */
+/* One consistent centered content frame across editorial panels and sections. */
+.container {
+  width: min(1200px, calc(100% - 64px));
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+.page-hero {
+  position: relative;
+  background-position: center, center center;
+  background-size: cover;
+}
+.page-hero > .container {
+  width: min(1200px, calc(100% - 64px));
+  margin-inline: auto;
+}
+.home-story-grid,
+.about-story-grid {
+  width: min(1200px, calc(100% - 64px));
+  max-width: 1200px;
+  min-height: 0;
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+}
+.home-story-copy {
+  padding: clamp(36px, 5vw, 68px) clamp(28px, 4vw, 56px) clamp(36px, 5vw, 68px) 0;
+}
+.home-story-image,
+.home-story-image img,
+.about-story-image,
+.about-story-image img {
+  min-height: 360px;
+  max-height: 470px;
+}
+.home-story-image img,
+.about-story-image img {
+  object-fit: cover;
+  object-position: center;
+}
+.about-story-copy { padding: clamp(32px, 4vw, 58px); }
+.services-preview .container,
+.why-valor .container,
+.team-page-section > .container {
+  width: min(1200px, calc(100% - 64px));
+  margin-inline: auto;
+}
+/* Preserve alternating leadership cards, but align both to the same grid. */
+.leadership-feature,
+.leadership-sabrie {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.leadership-sabrie { margin-inline: 0; }
+.leadership-photo-wrap {
+  min-width: 0;
+  min-height: 340px;
+  max-height: 420px;
+}
+.leadership-photo {
+  object-fit: contain;
+  object-position: center;
+}
+/* The team masthead is branded, not a heavily cropped photograph. */
+.page-team .team-hero {
+  min-height: 300px;
+  background-color: var(--va-ink);
+  background-image:
+    radial-gradient(ellipse at 82% 50%, rgba(184,154,89,.16), transparent 42%),
+    linear-gradient(115deg, #171914 0%, #293024 58%, #20251d 100%);
+}
+.page-about .page-hero {
+  background-image: linear-gradient(90deg, rgba(17,20,15,.78), rgba(17,20,15,.28)), url('../images/valor_backdrop2.png');
+  background-position: center, center 52%;
+}
+.page-shippers .page-hero {
+  background-image: linear-gradient(90deg, rgba(17,20,15,.78), rgba(17,20,15,.20)), url('../images/valor_backdrop3.png');
+  background-position: center, center 52%;
+}
+.page-quote .page-hero {
+  background-image: linear-gradient(90deg, rgba(17,20,15,.82), rgba(17,20,15,.25)), url('../images/valor_backdrop2.png');
+  background-position: center, center 52%;
+}
+@media (max-width: 768px) {
+  .container,
+  .page-hero > .container,
+  .home-story-grid,
+  .about-story-grid,
+  .services-preview .container,
+  .why-valor .container,
+  .team-page-section > .container {
+    width: calc(100% - 36px);
+  }
+  .home-story-grid,
+  .about-story-grid { grid-template-columns: 1fr; }
+  .home-story-copy { padding: 38px 0; }
+  .home-story-image,
+  .home-story-image img,
+  .about-story-image,
+  .about-story-image img {
+    min-height: 260px;
+    max-height: 340px;
+  }
+  .about-story-copy { padding: 36px 0 42px; }
+  .leadership-feature,
+  .leadership-sabrie {
+    width: 100%;
+    margin: 0 0 20px;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  }
+}
+@media (max-width: 560px) {
+  .leadership-feature,
+  .leadership-sabrie { grid-template-columns: 1fr; }
+}
