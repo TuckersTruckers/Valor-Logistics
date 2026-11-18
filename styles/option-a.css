@@ -451,3 +451,137 @@ main > section { position: relative; }
   .team-group-heading { align-items: flex-start; flex-direction: column; gap: 6px; }
   .team-group-heading::after { display: none; }
 }
+
+
+/* =========================================================
+   CANVA ASSET INTEGRATION — OPTION A PREMIUM EDITORIAL
+   Unique image for each primary page; textures remain subtle.
+   ========================================================= */
+
+/* Homepage: cinematic freight image, with copy protected on the left. */
+.page-home .hero {
+  background-color: var(--va-ink);
+  background-image:
+    linear-gradient(90deg, rgba(15,18,14,.88) 0%, rgba(15,18,14,.68) 35%, rgba(15,18,14,.08) 76%),
+    url('../images/valor-home-hero.jpg');
+  background-position: center, center 54%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Each audience/service page gets its own dedicated Canva banner. */
+.page-services .page-hero {
+  background-image:
+    linear-gradient(90deg, rgba(17,20,15,.82) 0%, rgba(17,20,15,.48) 52%, rgba(17,20,15,.16) 100%),
+    url('../images/valor-services-hero.jpg');
+  background-position: center, center 52%;
+}
+.page-shippers .page-hero {
+  background-image:
+    linear-gradient(90deg, rgba(17,20,15,.82) 0%, rgba(17,20,15,.42) 55%, rgba(17,20,15,.12) 100%),
+    url('../images/valor-shippers-hero.jpg');
+  background-position: center, center 50%;
+}
+.page-carriers .page-hero {
+  background-image:
+    linear-gradient(90deg, rgba(17,20,15,.82) 0%, rgba(17,20,15,.40) 55%, rgba(17,20,15,.10) 100%),
+    url('../images/valor-carriers-hero.jpg');
+  background-position: center, center 52%;
+}
+
+/* About and quote mastheads use the new dark texture, not a reused photo. */
+.page-about .page-hero,
+.page-quote .page-hero {
+  background-color: var(--va-ink);
+  background-image:
+    linear-gradient(90deg, rgba(17,20,15,.91), rgba(17,20,15,.78)),
+    url('../images/valor-dark-texture.jpg');
+  background-position: center, center;
+  background-size: cover;
+}
+
+/* Editorial supporting images: preserve the full composition rather than
+   zooming/cropping a 16:9 Canva export into a tall split-panel slot. */
+.home-story-image,
+.about-story-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--va-ink);
+}
+.home-story-image img,
+.about-story-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+}
+.home-story-image img { background: var(--va-ink); }
+.about-story-image {
+  background-color: var(--va-cream);
+}
+.about-story-image img {
+  padding: clamp(8px, 1.4vw, 18px);
+  background: var(--va-cream);
+}
+
+/* Low-contrast textures add depth to the alternating light/dark sections. */
+.services-preview,
+.content-section,
+.about-story,
+.home-story,
+.team-editorial-section {
+  background-color: var(--va-paper);
+  background-image:
+    linear-gradient(rgba(251,250,246,.94), rgba(251,250,246,.94)),
+    url('../images/valor-light-texture.jpg');
+  background-position: center, center;
+  background-size: cover;
+}
+.about-story {
+  background-color: var(--va-cream);
+  background-image:
+    linear-gradient(rgba(242,238,229,.93), rgba(242,238,229,.93)),
+    url('../images/valor-light-texture.jpg');
+}
+.why-valor,
+.testimonials,
+.band-section,
+.footer {
+  background-color: var(--va-ink);
+  background-image:
+    linear-gradient(rgba(23,25,20,.93), rgba(23,25,20,.93)),
+    url('../images/valor-dark-texture.jpg');
+  background-position: center, center;
+  background-size: cover;
+}
+.why-valor,
+.band-section { background-color: var(--va-olive-deep); }
+.why-valor {
+  background-image:
+    linear-gradient(rgba(41,48,36,.92), rgba(41,48,36,.92)),
+    url('../images/valor-dark-texture.jpg');
+}
+.band-section {
+  background-image:
+    linear-gradient(rgba(41,48,36,.93), rgba(41,48,36,.93)),
+    url('../images/valor-dark-texture.jpg');
+}
+
+/* Small screens: keep each image legible without forcing a desktop crop. */
+@media (max-width: 800px) {
+  .home-story-image,
+  .about-story-image {
+    height: auto;
+    min-height: 0;
+    padding: 12px;
+  }
+  .home-story-image img,
+  .about-story-image img {
+    height: auto;
+    max-height: 360px;
+    min-height: 0;
+  }
+}
