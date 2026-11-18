@@ -1,0 +1,198 @@
+/* VALOR LOGISTICS — branded visual atmosphere refresh
+   Uses the supplied Valor artwork as intentional visual anchors.
+   Keep text areas readable; imagery supports the content rather than competing with it. */
+
+:root {
+  --valor-olive: #303a2b;
+  --valor-olive-deep: #20261d;
+  --valor-gold: #b69a55;
+  --valor-cream: #f4f0e7;
+}
+
+/* Home: use the supplied freight scene as the main visual statement. */
+.hero {
+  background-image:
+    linear-gradient(90deg, rgba(25,30,22,.88) 0%, rgba(35,42,29,.67) 48%, rgba(35,42,29,.2) 100%),
+    url('../images/valor_backdrop1.png');
+  background-position: center, center 54%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: clamp(500px, 67vw, 690px);
+  position: relative;
+  isolation: isolate;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0;
+  height: 7px;
+  background: linear-gradient(90deg, var(--valor-gold), rgba(182,154,85,.12));
+}
+
+/* Secondary-page mastheads use the alternate branded freight image. */
+.page-hero {
+  background-image:
+    linear-gradient(90deg, rgba(27,33,24,.9) 0%, rgba(38,47,32,.74) 56%, rgba(38,47,32,.42) 100%),
+    url('../images/valor_backdrop2.png');
+  background-position: center, center 52%;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  right: max(3vw, calc((100vw - 1240px) / 2));
+  bottom: 0;
+  width: min(22vw, 260px);
+  height: 5px;
+  background: var(--valor-gold);
+}
+
+/* Light road artwork provides a visual pause between text-heavy sections. */
+.services-preview,
+.content-section {
+  background-color: #fbfaf6;
+  background-image:
+    linear-gradient(rgba(251,250,246,.93), rgba(251,250,246,.96)),
+    url('../images/valor_backdrop3.png');
+  background-position: center, right center;
+  background-size: cover, min(54vw, 700px) auto;
+  background-repeat: no-repeat;
+}
+.services-preview { position: relative; }
+.services-preview .container,
+.content-section .container { position: relative; z-index: 1; }
+
+/* Alternate the visual weight: dark olive texture for values and commitment. */
+.why-valor,
+.band-section,
+.testimonials {
+  background-color: var(--valor-olive-deep);
+  background-image:
+    linear-gradient(110deg, rgba(31,38,28,.96), rgba(43,53,35,.88)),
+    url('../images/valor_backdrop4.png');
+  background-position: center, center;
+  background-size: cover;
+  color: #f7f3e9;
+}
+.why-valor .section-title,
+.why-valor h2,
+.why-valor h3,
+.testimonials .section-title,
+.band-section h2 { color: #f7f3e9; }
+.why-valor .section-subtitle { color: rgba(247,243,233,.76); }
+.why-valor .value-card {
+  background: rgba(249,247,239,.96);
+  border-color: rgba(182,154,85,.42);
+}
+
+/* Keep the customer quote area atmospheric, but give the quote room to breathe. */
+.testimonials {
+  background-image:
+    linear-gradient(110deg, rgba(31,38,28,.92), rgba(43,53,35,.82)),
+    url('../images/valor_backdrop4.png');
+}
+.testimonial-carousel {
+  max-width: 920px;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4rem);
+  background: rgba(16,21,15,.34);
+  border: 1px solid rgba(216,197,138,.42);
+  box-shadow: 0 20px 50px rgba(0,0,0,.16);
+}
+
+/* A restrained branded banner anchors the final contact invitation. */
+.contact-section {
+  background:
+    linear-gradient(90deg, rgba(249,247,240,.97), rgba(249,247,240,.88)),
+    url('../images/top-banner.jpg') center/cover no-repeat;
+  border-top: 1px solid rgba(182,154,85,.42);
+}
+.contact-grid { align-items: stretch; }
+.contact-info-box,
+.contact-cta {
+  min-height: 100%;
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+}
+.contact-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #303a2b, #20261d);
+  color: #f7f3e9;
+  border-left: 3px solid var(--valor-gold);
+}
+.contact-cta p { color: rgba(247,243,233,.86); }
+
+/* Secondary pages: vary the rhythm instead of repeating a stack of white cards. */
+.content-section { position: relative; }
+.content-section .info-grid { gap: 1rem; margin-top: 2.2rem; }
+.content-section .info-card {
+  background: rgba(255,255,255,.92);
+  border: 0;
+  border-top: 3px solid var(--valor-gold);
+  box-shadow: 0 12px 28px rgba(31,38,28,.075);
+}
+.band-section {
+  border-top: 3px solid var(--valor-gold);
+  border-bottom: 3px solid rgba(182,154,85,.35);
+}
+.band-section .eyebrow { color: #e0cc91; }
+.band-section p { color: rgba(247,243,233,.86); }
+
+/* Services page: use open editorial rows, not repeated floating tiles. */
+.service-list { max-width: 1080px; }
+.service-detail {
+  padding: clamp(1.8rem, 3vw, 2.7rem) clamp(.5rem, 2vw, 1.5rem);
+  border-bottom: 1px solid rgba(75,86,56,.2);
+  transition: background .2s ease, padding .2s ease;
+}
+.service-detail:nth-child(even) {
+  background: linear-gradient(105deg, rgba(244,240,231,.82), rgba(244,240,231,.18));
+}
+.service-detail:hover { padding-left: clamp(1rem, 3vw, 2.2rem); }
+.service-number { font-size: 1.15rem; }
+
+/* Quote and contact layouts get an editorial left rail and a clear form focus. */
+.quote-guidance {
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+  background:
+    linear-gradient(rgba(38,46,32,.9), rgba(38,46,32,.9)),
+    url('../images/valor_backdrop4.png') center/cover;
+  color: #f7f3e9;
+  border-left: 4px solid var(--valor-gold);
+}
+.quote-guidance h2,
+.quote-guidance h3 { color: #f7f3e9; }
+.quote-guidance p,
+.quote-guidance li { color: rgba(247,243,233,.84); }
+.form-card { box-shadow: 0 18px 44px rgba(31,38,28,.1); }
+
+/* Small artwork detail ties page endings together without filling every gap. */
+.footer {
+  background-image:
+    linear-gradient(rgba(31,37,28,.97), rgba(31,37,28,.97)),
+    url('../images/valor_backdrop4.png');
+  background-size: cover;
+  background-position: center;
+}
+.footer-bottom { border-top-color: rgba(216,197,138,.25); }
+
+@media (max-width: 768px) {
+  .hero { min-height: 500px; background-position: center, 58% center; }
+  .page-hero { background-position: center, 58% center; }
+  .services-preview,
+  .content-section {
+    background-image: linear-gradient(rgba(251,250,246,.96), rgba(251,250,246,.97)), url('../images/valor_backdrop3.png');
+    background-size: cover, cover;
+  }
+  .contact-grid { gap: 1rem; }
+  .contact-cta { min-height: 190px; }
+  .service-detail:nth-child(even) { padding-inline: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-detail { transition: none; }
+}
