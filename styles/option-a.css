@@ -682,8 +682,8 @@ main > section { position: relative; }
       rgba(255,255,255,.075) 74px 75px,
       transparent 75px 118px),
     linear-gradient(112deg,
-      rgba(242,238,229,.96) 0 39%,
-      rgba(242,238,229,.90) 39.2% 100%);
+      rgba(37,43,33,.42) 0 39%,
+      rgba(242,238,229,.84) 39.2% 100%);
 }
 .leadership-sabrie::after {
   background:
@@ -696,8 +696,8 @@ main > section { position: relative; }
       rgba(255,255,255,.075) 74px 75px,
       transparent 75px 118px),
     linear-gradient(112deg,
-      rgba(242,238,229,.96) 0 61%,
-      rgba(242,238,229,.90) 61.2% 100%);
+      rgba(242,238,229,.84) 0 61%,
+      rgba(37,43,33,.42) 61.2% 100%);
 }
 .leadership-feature > *,
 .leadership-sabrie > * {
